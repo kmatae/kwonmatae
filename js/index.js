@@ -28,12 +28,14 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
+
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        window.open = cordova.InAppBrowser.open('http://8282english.com', '_blank', 'location=yes');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
